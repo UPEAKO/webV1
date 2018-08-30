@@ -1,63 +1,78 @@
-#left1-part
+*
 {
-    float: left;
-    width: 150px;
-    height: 1500px;
-    border-right: 1px solid #827e84;
+    margin: 0;
+    padding: 0;
+}
+
+/*顶部*/
+#top-part
+{
+
 }
 .sign
 {
-    width: 45px;
-    height: 50px;
+    width: auto;
+    height: auto;
 }
-/*
+ul
+{
+    display: flex;
+    font-size: 0;
+}
+li
+{
+    text-align: center;
+    background-color: #6ab344;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    flex: 1;
+}
+a.classification:link,a.classification:visited
+{
+    color: wheat;
+    padding: 13px 18px 13px 18px;
+    text-align:center;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-size: medium;
+}
+a.classification:hover,a.classification:active
+{
+    background-color: #345d24;
+}
+
+/*中部*/
+#median-part
+{
+    display: flex;
+}
+#median-left
+{
+    background: rgba(255, 229, 187, 0.09);
+    width: 150px;
+    height: 1475px;
+    border-right: 1px solid #827e84;
+}
 #login
 {
     text-decoration:none;
     color: darkslategray;
 }
-*/
-
-#right1-part
+#median-median
 {
-    float: left;
-    width: 800px;
+    flex: 1;
 }
-ul
+#median-right-1
 {
-    font-size: 0;
-    margin-top: 15px;
-}
-li
-{
-    display: inline;
-}
-a.classification:link,a.classification:visited
-{
-    color:#4A235A;
-    background-color:#D5DBDB;
-    text-align:center;
-    text-decoration:none;
-    text-transform:uppercase;
-    /*上右下左*/
-    padding: 8px 18px 8px 18px;
-    font-size: medium;
-}
-a.classification:hover,a.classification:active
-{
-    background-color:#A6ACAF;
-}
-#right1-part2
-{
-    height: 1350px;
+    height: 1450px;
     overflow: scroll;
     margin-top: 30px;
 }
 .introduce
 {
-    margin-left: 30px;
+    margin-left: 10px;
     margin-top: 50px;
-    border: 1px dotted #827e84;
+    /*border: 1px dotted #827e84;*/
     background: #F8F9F9;
 }
 h5
@@ -68,8 +83,23 @@ p
 {
     font-size: xx-small;
 }
+#median-right
+{
+    width: 100px;
+}
+
+
+/*底部*/
+#bottom-part
+{
+    background: rgba(250, 235, 215, 0.15);
+    margin-top: 5px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-bottom: 5px;
+}
 #foot
 {
-    border-top: 1px solid #758896;
-    margin-top: 5px;
+    text-align: center;
+    font-size: medium;
 }

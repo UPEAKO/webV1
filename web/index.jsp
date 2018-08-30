@@ -17,24 +17,9 @@
     <link rel="stylesheet" type="text/css" href="css/style1.css" />
   </head>
   <body>
-  <div id="left1-part">
-    <div>
-      <img class="sign" src="image/second.jpeg"/>
-      <img class="sign" src="image/second.jpeg"/>
-      <img class="sign" src="image/second.jpeg"/>
-    </div>
-    <div>
-      <a href="js/login.jsp" id="login"><img src="image/first.jpeg" style="width: 30px;height: 30px"/></a>
-      <p><strong>功能2</strong></p>
-      <p><strong>功能3</strong></p>
-      <p><strong>功能4</strong></p>
-      <p><strong>功能5</strong></p>
-      <p><strong>功能6</strong></p>
-    </div>
-  </div>
-  <div id="right1-part">
+  <div id="top-part">
     <ul id="projects">
-      <li><a href="" style="background: #827e84" class="classification">linux</a></li>
+      <li><a href="" class="classification">linux</a></li>
       <li><a href="" class="classification">java</a></li>
       <li><a href="" class="classification">python</a></li>
       <li><a href="" class="classification">tomcat</a></li>
@@ -42,40 +27,62 @@
       <li><a href="" class="classification">nginx</a></li>
       <li><a href="" class="classification">html</a></li>
       <li><a href="" class="classification">css</a></li>
-      <li><a href="" class="classification">js</a></li>
-      </ul>
-    <div id="right1-part2">
-      <%
-        try {
-          Class.forName("com.mysql.cj.jdbc.Driver");
-          String url = "jdbc:mysql://localhost:3306/blogs?useUnicode=true&characterEncoding=utf8&useSSL=true";
-          Connection connection = DriverManager.getConnection(url,"ubd","19380678");
-          Statement statement = connection.createStatement();
-          //String sql1 = "insert into article values (6,'标题3','内容3')";
-          //statement.executeUpdate(sql);
-          String sql = "select * from article";
-          ResultSet resultSet = statement.executeQuery(sql);
-          while (resultSet.next()) {
-      %>
-      <div class="introduce">
-        <h5>
-          <%
-            out.print(resultSet.getString("head"));
-          %>
-        </h5>
-        <%--写在一行防止首行缩进,但使用pre并非合适的方式
-        <pre><%
-          String temp = resultSet.getString("context");
-          out.print(temp);%></pre>
-        --%>
-        <%
-          String str = resultSet.getString("context");
-          String [] strs = str.split("\n");
-          for (int i = 0; i < strs.length; i++) {
-            out.print("<p>"+strs[i]+"</p>");
-          }
-        %>
+      <li><a href="" class="classification">javascript</a></li>
+    </ul>
+  </div>
+  <div id="median-part">
+    <div id="median-left">
+      <div>
+        <img src="image/game3.gif_s400x0" width="75" height="50" style="margin-top: 15px;margin-left: 3px"/>
+        <a href="js/login.jsp" id="login">登录</a>
       </div>
+      <div>
+        <img src="image/game2.gif_s400x0" width="75" height="50" style="margin-top: 15px;margin-left: 3px"/>
+      </div>
+      <div>
+        <img src="image/game3.gif_s400x0" width="75" height="50" style="margin-top: 15px;margin-left: 3px"/>
+      </div>
+      <div>
+        <img src="image/game4.gif_s400x0" width="75" height="50" style="margin-top: 15px;margin-left: 3px"/>
+      </div>
+      <div>
+        <img src="image/game3.gif_s400x0" width="75" height="50" style="margin-top: 15px;margin-left: 3px"/>
+      </div>
+      <div>
+        <img src="image/game5.gif_s400x0" width="75" height="50" style="margin-top: 15px;margin-left: 3px"/>
+      </div>
+      <div>
+        <img src="image/game3.gif_s400x0" width="75" height="50" style="margin-top: 15px;margin-left: 3px"/>
+      </div>
+    </div>
+    <div id="median-median">
+      <div id="median-right-1">
+        <%
+          try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String url = "jdbc:mysql://localhost:3306/blogs?useUnicode=true&characterEncoding=utf8&useSSL=true";
+            Connection connection = DriverManager.getConnection(url,"ubd","19380678");
+            Statement statement = connection.createStatement();
+            //String sql1 = "insert into article values (6,'标题3','内容3')";
+            //statement.executeUpdate(sql);
+            String sql = "select * from article";
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+        %>
+        <div class="introduce">
+          <h5>
+            <%
+              out.print(resultSet.getString("head"));
+            %>
+          </h5>
+          <%
+            String str = resultSet.getString("context");
+            String [] strs = str.split("\n");
+            for (int i = 0; i < strs.length; i++) {
+              out.print("<p>"+strs[i]+"</p>");
+            }
+          %>
+        </div>
         <%
             }
             statement.close();
@@ -84,13 +91,20 @@
             e.printStackTrace();
           }
         %>
+      </div>
+    </div>
+    <div id="median-right">
+      <canvas id="game1" height="1500" style="background-color:rgba(149,255,174,0);margin-top: 35px">
+        您的浏览器不支持 HTML5 canvas 标签。
+        <script src="script/game1.js"></script>
+      </canvas>
     </div>
   </div>
-  <div style="clear: both"></div>
-  <div id="foot">
-    <p style="text-align: center">
+  <div id="bottom-part">
+    <p id="foot">
       Copyright © 2018 ubd All Rights Reserved.
     </p>
   </div>
   </body>
 </html>
+

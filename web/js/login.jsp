@@ -10,7 +10,6 @@
 <head>
   <link rel="shortcut icon" href="../image/second.jpeg" />
   <title>login--blog</title>
-  <link rel="stylesheet" type="text/css" href="../css/style2.css" />
 </head>
 <body style="text-align: center;margin-top: 200px">
 <form action="../js/permission.jsp" method="post">

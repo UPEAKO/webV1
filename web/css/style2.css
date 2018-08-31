@@ -1,0 +1,168 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+/*顶部*/
+#top-part
+{
+
+}
+.sign
+{
+    width: auto;
+    height: auto;
+}
+#functions
+{
+    display: flex;
+}
+#login
+{
+    text-decoration:none;
+    color: darkslategray;
+}
+a.aTop:link,a.aTop:visited
+{
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    color: wheat;
+    text-decoration:none;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+a.aTop:hover,a.aTop:active
+{
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    text-decoration:none;
+    background: #249114;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+.item
+{
+    background: #25bd13;
+    list-style-type: none;
+}
+#item1
+{
+    flex: 1;
+}
+#item2
+{
+    flex: 2;
+}
+#item3
+{
+    flex: 2;
+}
+#item4
+{
+    flex: 2;
+}
+#item5
+{
+    flex: 13;
+}
+
+
+/*中部*/
+#median-part
+{
+    display: flex;
+}
+#median-left
+{
+    background: rgba(255, 229, 187, 0.09);
+    width: 150px;
+    height: 1475px;
+    border-right: 1px solid #827e84;
+}
+.item-left
+{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+a.aLeft:link
+{
+    display: inline-block;
+    color: #820d5d;
+    text-decoration:none;
+    padding-left: 20%;
+    width: 80%;
+}
+a.aLeft:visited
+{
+    display: inline-block;
+    color: #758896;
+    text-decoration:none;
+    padding-left: 20%;
+    width: 80%;
+}
+a.aLeft:hover
+{
+    display: inline-block;
+    background: #00a0e9;
+    color: #000000;
+    text-decoration:none;
+    padding-left: 20%;
+    width: 80%;
+}
+a.aLeft:active
+{
+    display: inline-block;
+    background: #2510b3;
+    color: #eb1215;
+    text-decoration:none;
+    padding-left: 20%;
+    width: 80%;
+}
+#median-median
+{
+    flex: 1;
+}
+#median-right-1
+{
+    height: 1450px;
+    overflow: scroll;
+    margin-top: 30px;
+}
+.introduce
+{
+    margin-left: 10px;
+    margin-top: 50px;
+    /*border: 1px dotted #827e84;*/
+    background: #F8F9F9;
+}
+h5
+{
+    text-align: center;
+}
+p
+{
+    font-size: xx-small;
+}
+#median-right
+{
+    width: 100px;
+}
+
+
+/*底部*/
+#bottom-part
+{
+    background: rgba(250, 235, 215, 0.15);
+    margin-top: 5px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-bottom: 5px;
+}
+#foot
+{
+    text-align: center;
+    font-size: medium;
+}

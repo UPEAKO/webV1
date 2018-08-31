@@ -10,7 +10,6 @@
 <head>
   <link rel="shortcut icon" href="../image/second.jpeg" />
   <title>权限识别</title>
-  <link rel="stylesheet" type="text/css" href="../css/style3.css" />
 </head>
 <body>
 <%

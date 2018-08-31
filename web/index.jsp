@@ -18,69 +18,73 @@
   </head>
   <body>
   <div id="top-part">
-    <ul id="projects">
-      <li><a href="" class="classification">linux</a></li>
-      <li><a href="" class="classification">java</a></li>
-      <li><a href="" class="classification">python</a></li>
-      <li><a href="" class="classification">tomcat</a></li>
-      <li><a href="" class="classification">apache</a></li>
-      <li><a href="" class="classification">nginx</a></li>
-      <li><a href="" class="classification">html</a></li>
-      <li><a href="" class="classification">css</a></li>
-      <li><a href="" class="classification">javascript</a></li>
+    <ul id="functions">
+      <li id="item1" class="item"></li>
+      <li id="item2" class="item"><a href="js/login.jsp" class="aTop">登录</a></li>
+      <li id="item3" class="item"><a href="" class="aTop">计算</a></li>
+      <li id="item4" class="item"><a href="" class="aTop">绘图板</a></li>
+      <li id="item5" class="item"></li>
     </ul>
   </div>
   <div id="median-part">
     <div id="median-left">
       <div>
-        <img src="image/game3.gif_s400x0" width="75" height="50" style="margin-top: 15px;margin-left: 3px"/>
-        <a href="js/login.jsp" id="login">登录</a>
+        <img src="image/game4.gif_s400x0" width="75" height="50" style="margin-top: 3px;margin-left: 3px"/>
+      </div>
+      <%
+        try {
+          Class.forName("com.mysql.cj.jdbc.Driver");//"com.mysql.cj.jdbc.Driver"
+          String url = "jdbc:mysql://localhost:3306/blogs?useUnicode=true&characterEncoding=utf8&useSSL=true";
+          Connection connection = DriverManager.getConnection(url,"ubd","19380678");
+          Statement statement = connection.createStatement();
+          String sql1 = "select * from categorys";
+          ResultSet resultSet1 = statement.executeQuery(sql1);
+      %>
+      <div>
+        <ul>
+          <%
+            String temp = "js/category.jsp?category=";
+            while (resultSet1.next()) {
+                String current = resultSet1.getString("category");
+                String baseUrl = temp + current;
+                out.print("<li class=\"item-left\"><a href="+baseUrl+" class=\"aLeft\">"+current+"</a></li>");
+            }
+          %>
+          <%--
+          <li class="item-left"><a href="js/category.jsp?category=linux" class="aLeft">linux</a></li>
+          <li class="item-left"><a href="http://www.baidu.com" class="aLeft">java</a></li>
+          <li class="item-left"><a href="http://www.baidu.com" class="aLeft">python</a></li>
+          <li class="item-left"><a href="http://www.baidu.com" class="aLeft">tomcat</a></li>
+          <li class="item-left"><a href="http://www.baidu.com" class="aLeft">apache</a></li>
+          <li class="item-left"><a href="http://www.baidu.com" class="aLeft">nginx</a></li>
+          <li class="item-left"><a href="http://www.baidu.com" class="aLeft">html</a></li>
+          <li class="item-left"><a href="http://www.baidu.com" class="aLeft">css</a></li>
+          <li class="item-left"><a href="http://www.baidu.com" class="aLeft">javascript</a></li>
+          <li class="item-left"><a href="http://www.baidu.com" class="aLeft">cplusplus</a></li>
+          --%>
+        </ul>
       </div>
       <div>
-        <img src="image/game2.gif_s400x0" width="75" height="50" style="margin-top: 15px;margin-left: 3px"/>
-      </div>
-      <div>
-        <img src="image/game3.gif_s400x0" width="75" height="50" style="margin-top: 15px;margin-left: 3px"/>
-      </div>
-      <div>
-        <img src="image/game4.gif_s400x0" width="75" height="50" style="margin-top: 15px;margin-left: 3px"/>
-      </div>
-      <div>
-        <img src="image/game3.gif_s400x0" width="75" height="50" style="margin-top: 15px;margin-left: 3px"/>
-      </div>
-      <div>
-        <img src="image/game5.gif_s400x0" width="75" height="50" style="margin-top: 15px;margin-left: 3px"/>
-      </div>
-      <div>
-        <img src="image/game3.gif_s400x0" width="75" height="50" style="margin-top: 15px;margin-left: 3px"/>
+        <img src="image/game5.gif_s400x0" width="75" height="50" style="margin-top: 3px;margin-left: 3px"/>
       </div>
     </div>
     <div id="median-median">
       <div id="median-right-1">
         <%
-          try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/blogs?useUnicode=true&characterEncoding=utf8&useSSL=true";
-            Connection connection = DriverManager.getConnection(url,"ubd","19380678");
-            Statement statement = connection.createStatement();
-            //String sql1 = "insert into article values (6,'标题3','内容3')";
-            //statement.executeUpdate(sql);
-            String sql = "select * from article";
-            ResultSet resultSet = statement.executeQuery(sql);
-            while (resultSet.next()) {
+          String sql = "select * from article order by id desc limit 3";
+          ResultSet resultSet = statement.executeQuery(sql);
+          while (resultSet.next()) {
         %>
         <div class="introduce">
           <h5>
             <%
-              out.print(resultSet.getString("head"));
+              out.print(resultSet.getString("title"));
             %>
           </h5>
           <%
-            String str = resultSet.getString("context");
-            String [] strs = str.split("\n");
-            for (int i = 0; i < strs.length; i++) {
-              out.print("<p>"+strs[i]+"</p>");
-            }
+            /*ueditor富文本编辑器上传到后端的是html源码字符串,直接打印就可展示效果,其中表情链接到百度自身网站的资源*/
+            String str = resultSet.getString("content");
+            out.print(str);
           %>
         </div>
         <%

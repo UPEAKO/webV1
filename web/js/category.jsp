@@ -30,7 +30,7 @@
       <%
         try {
           Class.forName("com.mysql.cj.jdbc.Driver");
-          String url = "jdbc:mysql://localhost:3306/blogs?useUnicode=true&characterEncoding=utf8&useSSL=true";
+          String url = "jdbc:mysql://localhost:3306/blogs?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC";
           Connection connection = DriverManager.getConnection(url,"ubd","19380678");
           Statement statement = connection.createStatement();
           String sql1 = "select * from categorys";
